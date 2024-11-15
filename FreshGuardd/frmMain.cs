@@ -10,17 +10,24 @@ using System.Windows.Forms;
 
 namespace FreshGuardd
 {
-	public partial class Sample : Form
+	public partial class frmMain : Sample
 	{
-		public Sample()
+		static frmMain _obj;
+		public static frmMain Instance
+		{
+			get { if (_obj == null) { _obj = new frmMain(); }
+				return _obj;
+			}
+		}
+		public frmMain()
 		{
 			InitializeComponent();
-			this.BackColor = Color.FromArgb(239, 243, 248);
-			guna2MessageDialog1.Parent = frmMain.Instance;
 		}
-
-		private void Sample_Load(object sender, EventArgs e)
+		
+		
+		private void frmMain_Load(object sender, EventArgs e)
 		{
+			_obj = this;
 
 		}
 	}
